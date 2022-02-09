@@ -3,22 +3,11 @@ from tkinter import (
     ttk, Tk, StringVar, Frame, Label, Button, Canvas
 )
 
-from algorithms.bubbleSort import bubble_sort
-from algorithms.mergeSort import merge_sort
+from algorithms.sorting import SortingAlgorithm
 from colors import WHITE, LIGHT_GRAY, BLUE
 
 
 class SortingVisualizerFramework:
-    ALGORITHM_LIST = [
-        "Bubble Sort",
-        "Merge Sort",
-        "Insertion Sort",
-        "Selection Sort",
-        "Heap Sort",
-        "Quick Sort",
-        "Shell Sort",
-        "Radix Sort"
-    ]
 
     SPEED_LIST = ["Fast", "Medium", "Slow"]
 
@@ -33,10 +22,11 @@ class SortingVisualizerFramework:
     canvasOffset = 4
     canvasSpacing = 2
 
-    def __init__(self):
+    def __init__(self, algorithm_list):
         """
         The creation order in the constructor is of paramount importance.
         """
+        self.algorithm_list = algorithm_list
         self.data = []
         self.window = self._setup_window()
 
@@ -68,7 +58,7 @@ class SortingVisualizerFramework:
         l1 = Label(self.frame, text="Algorithm: ", bg=WHITE)
         l1.grid(row=0, column=0, padx=10, pady=5, sticky="W")
 
-        algo_menu = ttk.Combobox(self.frame, textvariable=self.algorithm_name, values=self.ALGORITHM_LIST)
+        algo_menu = ttk.Combobox(self.frame, textvariable=self.algorithm_name, values=list(self.algorithm_list.keys()))
         algo_menu.grid(row=0, column=1, padx=5, pady=5)
         algo_menu.current(0)
         return algo_menu
@@ -131,26 +121,8 @@ class SortingVisualizerFramework:
                 pass
 
     def sort(self):
-        timeTick = self.set_speed()
-
-        algorithm = self.algo_menu.get()
-        match algorithm:
-            case "Bubble Sort":
-                bubble_sort(self.data, timeTick, self)
-            case "Merge Sort":
-                merge_sort(self.data, 0, len(self.data) - 1, timeTick, self)
-            case "Insertion Sort":
-                ...
-            case "Selection Sort":
-                ...
-            case "Heap Sort":
-                ...
-            case "Quick Sort":
-                ...
-            case "Shell Sort":
-                ...
-            case "Radix Sort":
-                ...
+        algorithm = SortingAlgorithm(self.algorithm_list[self.algo_menu.get()])
+        algorithm.sort(self.data, self.set_speed(), self)
 
     def start(self):
         self.window.mainloop()
