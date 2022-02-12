@@ -1,7 +1,7 @@
 import time
 
-from algorithms.algorithm import Algorithm
-from colors import YELLOW, BLUE
+from app.algorithms.algorithm import Algorithm
+from app.colors import YELLOW, BLUE
 
 
 class BubbleSort(Algorithm):
@@ -13,7 +13,7 @@ class BubbleSort(Algorithm):
             for j in range(size - i - 1):
                 if data[j] > data[j + 1]:
                     data[j], data[j + 1] = data[j + 1], data[j]
-                    framework.drawData(data, [YELLOW if x == j or x == j + 1 else BLUE for x in range(len(data))])
+                    framework.draw(data, [YELLOW if x == j or x == j + 1 else BLUE for x in range(len(data))])
                     time.sleep(timeTick)
 
-        framework.drawData(data, [BLUE for x in range(len(data))])
+        framework.draw(data, [BLUE for x in range(len(data))])

@@ -1,7 +1,7 @@
 import time
 
-from algorithms.algorithm import Algorithm
-from colors import YELLOW, BLUE, PURPLE, DARK_BLUE
+from app.algorithms.algorithm import Algorithm
+from app.colors import YELLOW, BLUE, PURPLE, DARK_BLUE
 
 
 class MergeSort(Algorithm):
@@ -23,11 +23,10 @@ class MergeSort(Algorithm):
                 DARK_BLUE if mid < x <= end else
                 BLUE for x in range(len(data))
             ]
-            framework.drawData(data, arrayColorCodes)
+            framework.draw(data, arrayColorCodes)
             time.sleep(timeTick)
 
-        plainColorArray = [BLUE for x in range(len(data))]
-        framework.drawData(data, plainColorArray)
+        framework.draw(data, [BLUE for x in range(len(data))])
 
     @staticmethod
     def merge(data, start, mid, end):

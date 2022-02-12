@@ -1,4 +1,5 @@
-from algorithms.algorithm import Algorithm
+from app.algorithms.algorithm import Algorithm
+from app.framework.framework import Framework
 
 
 class SortingAlgorithm:
@@ -8,5 +9,5 @@ class SortingAlgorithm:
         if algorithm is not None:
             self.algorithm = algorithm
 
-    def sort(self, data, timeTick, framework) -> None:
+    def sort(self, data: list, timeTick: float, framework: Framework) -> None:
         self.algorithm.execute(data, timeTick, framework)
