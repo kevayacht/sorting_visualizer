@@ -1,6 +1,7 @@
 from app.algorithms.BubbleSort.bubbleSort import BubbleSort
 from app.algorithms.InsertionSort import InsertionSort
 from app.algorithms.MergeSort.mergeSort import MergeSort
+from app.algorithms.QuickSort.quickSort import QuickSort
 from app.algorithms.SelectionSort.selectionSort import SelectionSort
 from app.framework.sortingVisualizer import SortingVisualizerFramework
 
@@ -11,8 +12,8 @@ def start():
         "Merge Sort": MergeSort(),
         "Insertion Sort": InsertionSort,
         "Selection Sort": SelectionSort(),
+        "Quick Sort": QuickSort(),
         # "Heap Sort": HeapSort(),
-        # "Quick Sort": QuickSort(),
         # "Shell Sort": ShellSort(),
         # "Radix Sort": RadixSort()
     }

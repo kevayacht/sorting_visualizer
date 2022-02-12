@@ -19,5 +19,7 @@ class InsertionSort(Algorithm):
                 time.sleep(timeTick)
             data[j + 1] = key
             framework.draw(data, [RED if x == j + 1 else BLUE for x in range(len(data))])
+            time.sleep(timeTick)
 
         framework.draw(data, [BLUE for x in range(len(data))])
+        time.sleep(timeTick)
