@@ -9,6 +9,10 @@ meaning the sorting visualization. The fundamentals were thrown in to help me co
 `docker run -u=$(id -u $USER):$(id -g $USER) -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix -v $(pwd)/app:/app --rm sorting_visualizer`
 
 ```
+
+Attempting to implement tkinter with docker.
+x11 needs to work, and we need a display allocation. 
+
 Install Xorg
 
 Set $DISPLAY to: ":0:0" and "localhost:0:0"
