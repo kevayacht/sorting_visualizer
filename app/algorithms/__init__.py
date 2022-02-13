@@ -10,6 +10,8 @@ from app.algorithms.QuickSort.quickSort import QuickSort
 from app.algorithms.SelectionSort.selectionSort import SelectionSort
 from app.algorithms.ShellSort.shellSort import ShellSort
 from app.algorithms.InsertionSort.insertionSort import InsertionSort
+from app.algorithms.CountingSort.countingSort import CountingSort
+from app.algorithms.OpiBubbleSort.optiBubbleSort import OptiBubbleSort
 
 
 def get_sorting_algorithms() -> dict:
