@@ -2,6 +2,7 @@ from app.algorithms.algorithm import Algorithm
 from app.framework.framework import Framework
 
 
+# factory
 class SortingAlgorithm:
     algorithm: Algorithm
 

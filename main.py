@@ -11,7 +11,6 @@ def start():
         "Faster": 0.001,
         "Fastest": 0.0001,
     }
-    data_range = {}  # introduce a data range selection.
     framework = SortingVisualizerFramework(get_sorting_algorithms(), speed_selections)
     framework.start()
 

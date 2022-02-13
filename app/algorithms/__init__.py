@@ -12,6 +12,8 @@ from app.algorithms.ShellSort.shellSort import ShellSort
 from app.algorithms.InsertionSort.insertionSort import InsertionSort
 from app.algorithms.CountingSort.countingSort import CountingSort
 from app.algorithms.OpiBubbleSort.optiBubbleSort import OptiBubbleSort
+from app.algorithms.CocktailSort.cocktailSort import CocktailSort
+from app.algorithms.RandomSort.randomSort import RandomSort
 
 
 def get_sorting_algorithms() -> dict:
