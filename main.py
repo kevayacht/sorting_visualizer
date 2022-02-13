@@ -1,22 +1,8 @@
-from app.algorithms.BubbleSort.bubbleSort import BubbleSort
-from app.algorithms.InsertionSort import InsertionSort
-from app.algorithms.MergeSort.mergeSort import MergeSort
-from app.algorithms.QuickSort.quickSort import QuickSort
-from app.algorithms.SelectionSort.selectionSort import SelectionSort
+from app.algorithms import get_sorting_algorithms
 from app.framework.sortingVisualizer import SortingVisualizerFramework
 
 
 def start():
-    sorting_algorithms = {
-        "Bubble Sort": BubbleSort(),
-        "Merge Sort": MergeSort(),
-        "Insertion Sort": InsertionSort,
-        "Selection Sort": SelectionSort(),
-        "Quick Sort": QuickSort(),
-        # "Heap Sort": HeapSort(),
-        # "Shell Sort": ShellSort(),
-        # "Radix Sort": RadixSort()
-    }
     speed_selections = {
         "Slowest": 0.6,
         "Slow": 0.3,
@@ -25,7 +11,8 @@ def start():
         "Faster": 0.001,
         "Fastest": 0.0001,
     }
-    framework = SortingVisualizerFramework(sorting_algorithms, speed_selections)
+    data_range = {}  # introduce a data range selection.
+    framework = SortingVisualizerFramework(get_sorting_algorithms(), speed_selections)
     framework.start()
 
 

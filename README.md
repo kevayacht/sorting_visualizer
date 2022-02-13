@@ -32,3 +32,20 @@ docker run -u=$(id -u $USER):$(id -g $USER) \t
            /bin/bash
            
 ```
+
+
+```
+import sys
+current_module = sys.modules[__name__]
+In your context:
+
+import sys, inspect
+def print_classes():
+    for name, obj in inspect.getmembers(sys.modules[__name__]):
+        if inspect.isclass(obj):
+            print(obj)
+And even better:
+
+clsmembers = inspect.getmembers(sys.modules[__name__], inspect.isclass)
+Because inspect.getmembers() takes a predicate.
+```
